@@ -1,0 +1,47 @@
+{
+  "name": "multi-plus-tv-premium",
+  "version": "1.4.8",
+  "description": "Multi Plus TV PC app",
+  "main": "main.js",
+  "author": "JAHID",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --publish never"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.multiplustv.premium",
+    "productName": "Multi Plus TV PC",
+    "files": [
+      "index.html",
+      "main.js",
+      "logo.png",
+      "logo.ico",
+      "preload.js",
+      "firebase-config.js",
+      "activation-user.js",
+      "logo.svg"
+    ],
+    "win": {
+      "icon": "logo.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Multi Plus TV PC",
+      "createStartMenuShortcut": true
+    },
+    "publish": null
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
